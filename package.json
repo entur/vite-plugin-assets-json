@@ -5,6 +5,9 @@
   "files": [
     "dist"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "types": "./dist/main.d.ts",
   "author": "Entur AS",
   "contributors": [
