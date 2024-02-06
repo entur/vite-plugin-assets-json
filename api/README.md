@@ -8,9 +8,9 @@
 
 ## Functions
 
-### assetsJSON
+### default
 
-▸ **assetsJSON**(`options?`): `Plugin`\<`any`\>
+▸ **default**(`options?`): `Plugin`\<`any`\>
 
 Vite plugin to generate an assets JSON file with relevant information about the main assets.
 

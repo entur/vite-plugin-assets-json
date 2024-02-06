@@ -48,7 +48,7 @@ declare module 'vite' {
  * });
  * ```
  */
-export const assetsJSON = (options: AssetsJSONOptions = {}): Plugin => {
+const assetsJSON = (options: AssetsJSONOptions = {}): Plugin => {
   const {
     manifestPaths = ['.vite/manifest.json', '.vite/manifest-assets.json'],
     pathPrefix = '/products-frontend-static/',
@@ -69,6 +69,8 @@ export const assetsJSON = (options: AssetsJSONOptions = {}): Plugin => {
     }
   };
 };
+
+export default assetsJSON;
 
 /**
  * Create an asset manifest JSON file based on the Vite manifest.
