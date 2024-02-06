@@ -12,7 +12,7 @@ export default [
       {
         format: 'es',
         sourcemap: true,
-        file: 'dist/index.js'
+        file: 'dist/index.mjs'
       },
       {
         format: 'cjs',
