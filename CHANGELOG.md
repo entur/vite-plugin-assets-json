@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.0.4](https://github.com/entur/vite-plugin-assets-json/compare/0.0.3...0.0.4) (2024-02-06)
+
+
+### Bug
+
+* 🐛 Produce correct bundles ([559cc1e](https://github.com/entur/vite-plugin-assets-json/commit/559cc1ee9f42b899b1f4de54e9ade5f45b5813a5))
+
 ## [0.0.3](https://github.com/entur/vite-plugin-assets-json/compare/0.0.2...0.0.3) (2024-02-06)
 
 ## 0.0.2 (2024-02-06)
