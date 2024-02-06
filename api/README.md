@@ -41,4 +41,4 @@ export default defineConfig({
 
 #### Defined in
 
-main.ts:51
+[main.ts:51](https://github.com/entur/vite-plugin-assets-json/blob/main/src/main.ts#L51)

@@ -20,7 +20,7 @@ Where should the `assets.json`-file be generated?, relative to vite `outDir`
 
 #### Defined in
 
-main.ts:26
+[main.ts:26](https://github.com/entur/vite-plugin-assets-json/blob/main/src/main.ts#L26)
 
 ___
 
@@ -38,7 +38,7 @@ Path of the manifest files that should be read and transformed, relative to `out
 
 #### Defined in
 
-main.ts:16
+[main.ts:16](https://github.com/entur/vite-plugin-assets-json/blob/main/src/main.ts#L16)
 
 ___
 
@@ -56,4 +56,4 @@ Prefix for the produced asset path
 
 #### Defined in
 
-main.ts:21
+[main.ts:21](https://github.com/entur/vite-plugin-assets-json/blob/main/src/main.ts#L21)
