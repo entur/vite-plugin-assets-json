@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.0.7](https://github.com/entur/vite-plugin-assets-json/compare/0.0.6...0.0.7) (2024-02-06)
+
+
+### Bug
+
+* 🐛 fix ([4be2174](https://github.com/entur/vite-plugin-assets-json/commit/4be2174465801d0d1843902e114f13ca7599b599))
+
 ## [0.0.6](https://github.com/entur/vite-plugin-assets-json/compare/0.0.5...0.0.6) (2024-02-06)
 
 

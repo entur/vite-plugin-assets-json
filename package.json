@@ -1,7 +1,7 @@
 {
   "name": "@entur/vite-plugin-assets-json",
   "description": "A vite plugin to generate the required `assets.json` file ",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "files": [
     "dist"
   ],
