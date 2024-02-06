@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.0.5](https://github.com/entur/vite-plugin-assets-json/compare/0.0.4...0.0.5) (2024-02-06)
+
+
+### Bug
+
+* 🐛 Make sure we export default ([a465da8](https://github.com/entur/vite-plugin-assets-json/commit/a465da871a9c93660507529e45e7d102ac9d8e26))
+
 ## [0.0.4](https://github.com/entur/vite-plugin-assets-json/compare/0.0.3...0.0.4) (2024-02-06)
 
 
