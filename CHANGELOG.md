@@ -1,5 +1,7 @@
 # Changelog
 
+## [0.0.3](https://github.com/entur/vite-plugin-assets-json/compare/0.0.2...0.0.3) (2024-02-06)
+
 ## 0.0.2 (2024-02-06)
 
 
