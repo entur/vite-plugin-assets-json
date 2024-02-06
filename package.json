@@ -1,0 +1,77 @@
+{
+  "name": "@entur/vite-plugin-assets-json",
+  "description": "A vite plugin to generate the required `assets.json` file ",
+  "version": "0.0.1",
+  "files": [
+    "dist"
+  ],
+  "types": "./dist/main.d.ts",
+  "author": "Entur AS",
+  "contributors": [
+    "Alexander Vassbotn Røyne-Helgesen"
+  ],
+  "license": "EUPL-1.2",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/entur/vite-plugin-assets-json"
+  },
+  "homepage": "https://github.com/entur/vite-plugin-assets-json",
+  "bugs": "https://github.com/entur/vite-plugin-assets-json/issues",
+  "keywords": [
+    "entur",
+    "json",
+    "assets",
+    "assets.json",
+    "manifest.json",
+    "manifest",
+    "build",
+    "vite",
+    "vite-plugin",
+    "vitejs",
+    "plugin"
+  ],
+  "scripts": {
+    "build": "npm run clean && npm run rollup",
+    "clean": "rm -rf dist/ dts/",
+    "commit": "npx git-cz",
+    "docs:gen": "node ./node_modules/.bin/typedoc --entryPoints src --entryPointStrategy expand --gitRevision main --githubPages false --plugin typedoc-plugin-markdown --tsconfig tsconfig.json --hideInPageTOC --out api --readme none",
+    "release": "git checkout -- package-lock.json && release-it",
+    "rollup": "rollup -c",
+    "prerollup:dev": "npm run clean",
+    "rollup:dev": "rollup -c -w",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "@release-it/conventional-changelog": "^8.0.1",
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@types/node": "^20.11.16",
+    "@typescript-eslint/eslint-plugin": "^6.19.1",
+    "@typescript-eslint/parser": "^6.19.1",
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-import-resolver-typescript": "^3.6.1",
+    "eslint-plugin-compat": "^4.2.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-prettier": "^5.1.3",
+    "eslint-plugin-unused-imports": "^3.0.0",
+    "git-cz": "4.9.0",
+    "prettier": "^3.2.4",
+    "prettier-eslint": "^16.3.0",
+    "prettier-eslint-cli": "^8.0.1",
+    "release-it": "^17.0.3",
+    "rollup": "^4.9.6",
+    "rollup-plugin-dts": "^6.1.0",
+    "rollup-plugin-typescript2": "^0.36.0",
+    "tslib": "^2.6.2",
+    "typedoc": "^0.25.7",
+    "typedoc-plugin-frontmatter": "^0.0.2",
+    "typedoc-plugin-markdown": "^3.17.1",
+    "typedoc-plugin-mdn-links": "^3.1.13",
+    "typedoc-plugin-no-inherit": "^1.4.0",
+    "typedoc-plugin-rename-defaults": "^0.7.0",
+    "typescript": "^5.3.3",
+    "vite": "^5.0.0"
+  }
+}
