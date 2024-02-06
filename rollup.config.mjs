@@ -8,13 +8,18 @@ import typescript from 'typescript';
 export default [
   {
     input: ['src/main.ts'],
-    output: {
-      format: 'es',
-      sourcemap: true,
-      exports: 'named',
-      dir: 'dist',
-      assetFileNames: '[name][extname]'
-    },
+    output: [
+      {
+        format: 'es',
+        sourcemap: true,
+        file: 'dist/index.js'
+      },
+      {
+        format: 'cjs',
+        sourcemap: true,
+        file: 'dist/index.cjs'
+      }
+    ],
     plugins: [
       nodeResolve(),
       commonjs(),
@@ -28,7 +33,7 @@ export default [
   },
   {
     input: './dts/main.d.ts',
-    output: [{ file: './dist/main.d.ts', format: 'es' }],
+    output: [{ file: './dist/index.d.ts', format: 'es' }],
     plugins: [dts()]
   }
 ];

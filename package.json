@@ -8,7 +8,17 @@
   "publishConfig": {
     "access": "public"
   },
-  "types": "./dist/main.d.ts",
+  "sideEffects": false,
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
   "author": "Entur AS",
   "contributors": [
     "Alexander Vassbotn Røyne-Helgesen"
