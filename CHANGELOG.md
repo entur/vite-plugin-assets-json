@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.0.6](https://github.com/entur/vite-plugin-assets-json/compare/0.0.5...0.0.6) (2024-02-06)
+
+
+### Bug
+
+* 🐛 Use `*.mjs` ([4cadb7c](https://github.com/entur/vite-plugin-assets-json/commit/4cadb7c5596457a216ad79840f44ce158759b853))
+
 ## [0.0.5](https://github.com/entur/vite-plugin-assets-json/compare/0.0.4...0.0.5) (2024-02-06)
 
 
