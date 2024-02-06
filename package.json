@@ -10,12 +10,12 @@
   },
   "sideEffects": false,
   "main": "./dist/index.cjs",
-  "module": "./dist/index.js",
+  "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "require": "./dist/index.cjs",
-      "import": "./dist/index.js",
+      "import": "./dist/index.mjs",
       "types": "./dist/index.d.ts"
     }
   },
@@ -84,7 +84,9 @@
     "typedoc-plugin-mdn-links": "^3.1.13",
     "typedoc-plugin-no-inherit": "^1.4.0",
     "typedoc-plugin-rename-defaults": "^0.7.0",
-    "typescript": "^5.3.3",
+    "typescript": "^5.3.3"
+  },
+  "peerDependencies": {
     "vite": "^5.0.0"
   }
 }
