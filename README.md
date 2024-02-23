@@ -3,10 +3,17 @@
 A vite plugin to generate the required `assets.json` file
 
 ## Install
+Install using npm
+```
+npm i -D @entur/vite-plugin-assets-json
+```
 
+or yarn
 ```
-npm i -D @entur/vite-plugin-assets.json
+yarn add -D @entur/vite-plugin-assets-json
 ```
+
+
 
 ## Usage
 
