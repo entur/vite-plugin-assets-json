@@ -79,7 +79,7 @@
     "rollup-plugin-typescript2": "^0.36.0",
     "tslib": "^2.6.2",
     "typedoc": "^0.25.7",
-    "typedoc-plugin-frontmatter": "^0.0.2",
+    "typedoc-plugin-frontmatter": "^1.0.0",
     "typedoc-plugin-markdown": "^3.17.1",
     "typedoc-plugin-mdn-links": "^3.1.13",
     "typedoc-plugin-no-inherit": "^1.4.0",
