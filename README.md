@@ -3,17 +3,18 @@
 A vite plugin to generate the required `assets.json` file
 
 ## Install
+
 Install using npm
+
 ```
 npm i -D @entur/vite-plugin-assets-json
 ```
 
 or yarn
+
 ```
 yarn add -D @entur/vite-plugin-assets-json
 ```
-
-
 
 ## Usage
 
@@ -24,9 +25,7 @@ import { defineConfig } from 'vite';
 import { assetsJSON } from '@entur/vite-plugin-assets-json';
 
 export default {
-  plugins: [
-    assetsJSON()
-  ]
+  plugins: [assetsJSON()]
 };
 ```
 
@@ -187,9 +186,7 @@ With this `.vite/manifest.json`-file:
       "assets/Entur-Nationale-DemiboldItalic-90q0AW8J.woff2",
       "assets/Entur-Nationale-DemiboldItalic-Y6yQ14Oq.woff"
     ],
-    "css": [
-      "assets/main--EzDuqw6.css"
-    ],
+    "css": ["assets/main--EzDuqw6.css"],
     "file": "assets/main-D04VMQ0v.js",
     "isEntry": true,
     "src": "src/main.tsx"
