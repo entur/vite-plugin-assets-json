@@ -39,9 +39,11 @@ jobs:
           registry-url: "https://registry.npmjs.org"
 
       - name: Install dependencies
+        if: ${{ steps.release.outputs.release_created }}
         run: | # Install and link dependencies
           npm ci
       - name: Build
+        if: ${{ steps.release.outputs.release_created }}
         run: |
           npm run build
       - name: Publish to npm
