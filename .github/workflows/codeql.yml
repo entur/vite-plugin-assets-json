@@ -1,4 +1,4 @@
-name: "CodeQL"
+name: 'CodeQL'
 
 on:
   pull_request:
@@ -10,7 +10,7 @@ on:
     paths-ignore:
       - '**/README.md'
   schedule:
-    - cron: "0 3 * * MON"
+    - cron: '0 3 * * MON'
 
 jobs:
   code-scan:

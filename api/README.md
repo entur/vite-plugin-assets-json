@@ -16,8 +16,8 @@ Vite plugin to generate an assets JSON file with relevant information about the 
 
 #### Parameters
 
-| Name | Type | Description |
-| :------ | :------ | :------ |
+| Name      | Type                                                   | Description                           |
+| :-------- | :----------------------------------------------------- | :------------------------------------ |
 | `options` | [`AssetsJSONOptions`](interfaces/AssetsJSONOptions.md) | Configuration options for the plugin. |
 
 #### Returns
@@ -33,9 +33,7 @@ import { defineConfig } from 'vite';
 import { assetsJSON } from '@entur/vite-plugin-assets-json';
 
 export default defineConfig({
-  plugins: [
-    assetsJSON()
-  ]
+  plugins: [assetsJSON()]
 });
 ```
 

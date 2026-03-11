@@ -23,15 +23,11 @@ module.exports = {
       classes: true
     }
   },
-  ignorePatterns: [
-    '*.js',
-    '*.json',
-    '*.cjs',
-  ],
+  ignorePatterns: ['*.js', '*.json', '*.cjs'],
   settings: {
     'import/resolver': {
       typescript: {}
-    },
+    }
   },
   plugins: ['@typescript-eslint', 'import'],
   rules: {

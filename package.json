@@ -47,19 +47,16 @@
     "build": "npm run clean && npm run rollup",
     "clean": "rm -rf dist/ dts/",
     "commit": "npx git-cz",
-    "docs:gen": "node ./node_modules/.bin/typedoc --entryPoints src --entryPointStrategy expand --gitRevision main --githubPages false --plugin typedoc-plugin-markdown --tsconfig tsconfig.json --hideInPageTOC --out api --readme none",
-    "release": "git checkout -- package-lock.json && release-it",
     "rollup": "rollup -c",
     "prerollup:dev": "npm run clean",
     "rollup:dev": "rollup -c -w",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
-    "@release-it/conventional-changelog": "^10.0.5",
     "@rollup/plugin-commonjs": "^25.0.7",
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@rollup/plugin-terser": "^0.4.4",
-    "@types/node": "^22.19.13",
+    "@types/node": "^24.12.0",
     "@typescript-eslint/eslint-plugin": "^6.19.1",
     "@typescript-eslint/parser": "^6.19.1",
     "eslint": "^8.56.0",
@@ -73,18 +70,14 @@
     "prettier": "^3.2.4",
     "prettier-eslint": "^16.3.0",
     "prettier-eslint-cli": "^8.0.1",
-    "release-it": "^19.2.4",
     "rollup": "^4.9.6",
     "rollup-plugin-dts": "^6.1.0",
     "rollup-plugin-typescript2": "^0.36.0",
     "tslib": "^2.6.2",
-    "typedoc": "^0.25.7",
-    "typedoc-plugin-frontmatter": "^0.0.2",
-    "typedoc-plugin-markdown": "^3.17.1",
-    "typedoc-plugin-mdn-links": "^3.1.13",
-    "typedoc-plugin-no-inherit": "^1.4.0",
-    "typedoc-plugin-rename-defaults": "^0.7.0",
     "typescript": "^5.3.3",
     "vite": "^5.0.0"
+  },
+  "volta": {
+    "node": "24.12.0"
   }
 }

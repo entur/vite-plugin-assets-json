@@ -6,7 +6,7 @@ name: Checks
 on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
-    branches: [ "main" ]
+    branches: ['main']
     paths:
       - 'src'
       - 'package.json'
@@ -15,7 +15,7 @@ on:
       - 'tsconfig.json'
       - '.npmrc'
   pull_request:
-    branches: [ "main" ]
+    branches: ['main']
     types: [opened, synchronize] # Workflow triggering events
     paths:
       - 'src'
@@ -43,9 +43,9 @@ jobs:
         with:
           fetch-depth: 0 # Checkout all branches and tags
       - name: Setup Node.js environment
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
-          node-version: 22.x
+          node-version: 24.x
       - name: Install dependencies
         run: | # Install and link dependencies
           npm i
