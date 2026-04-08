@@ -1,6 +1,3 @@
-/* eslint-disable import/no-unused-modules */
-
-
 import { readFile, writeFile } from 'node:fs/promises';
 import { basename, dirname, resolve } from 'node:path';
 import type { Manifest, Plugin } from 'vite';
@@ -47,7 +44,7 @@ const assetsJSON = (options: AssetsJSONOptions = {}): Plugin => {
   const {
     manifestPaths = ['.vite/manifest.json', '.vite/manifest-assets.json'],
     pathPrefix = '/products-frontend-static/',
-    assetsDir = ''
+    assetsDir = '',
   } = options;
 
   return {
@@ -55,13 +52,10 @@ const assetsJSON = (options: AssetsJSONOptions = {}): Plugin => {
     apply: 'build',
     enforce: 'post',
     async writeBundle({ dir }) {
-      // eslint-disable-next-line compat/compat
       await Promise.all(
-        manifestPaths.map((path) =>
-          createAssetManifest(path, dir!, assetsDir, pathPrefix)
-        )
+        manifestPaths.map((path) => createAssetManifest(path, dir!, assetsDir, pathPrefix)),
       );
-    }
+    },
   };
 };
 
@@ -88,17 +82,19 @@ const createAssetManifest = async (
   manifestPath: string,
   outDir: string,
   assetsDir: string,
-  pathPrefix: string
+  pathPrefix: string,
 ) => {
   const resolveInOutDir = (path: string) => resolve(outDir, path);
 
   manifestPath = resolveInOutDir(manifestPath);
 
-  const manifest: Manifest | undefined = await readFile(manifestPath, 'utf-8')
-    .then(JSON.parse, () => undefined);
+  const manifest: Manifest | undefined = await readFile(manifestPath, 'utf-8').then(
+    JSON.parse,
+    () => undefined,
+  );
   const assets: Record<string, Record<string, string>[]> = {
     js: [],
-    css: []
+    css: [],
   };
 
   if (manifest) {
@@ -107,7 +103,7 @@ const createAssetManifest = async (
         if (chunk.isEntry) {
           assets.js.push({
             value: `${pathPrefix}${chunk.file}`,
-            type: 'entry'
+            type: 'entry',
           });
 
           if (chunk.css) {
@@ -116,7 +112,7 @@ const createAssetManifest = async (
             });
           }
         }
-      })
+      }),
     );
 
     const assetsFileName = basename(manifestPath).replace('manifest', 'assets');

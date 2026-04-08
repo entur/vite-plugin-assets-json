@@ -1,2 +1,4 @@
 /* Just a simple fixture to test that css entries from entry chunks are included in the manifest and assets.json */
-body { margin: 0; }
+body {
+  margin: 0;
+}

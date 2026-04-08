@@ -25,9 +25,7 @@ describe('vite-plugin-assets-json', () => {
       },
       plugins: [assetsJSON()],
     });
-    const assets = JSON.parse(
-      await readFile(resolve(outDir, 'assets.json'), 'utf-8')
-    );
+    const assets = JSON.parse(await readFile(resolve(outDir, 'assets.json'), 'utf-8'));
     expect(assets).toHaveProperty('js');
     expect(assets).toHaveProperty('css');
     expect(assets.js.length).toBeGreaterThan(0);
@@ -46,9 +44,7 @@ describe('vite-plugin-assets-json', () => {
       },
       plugins: [assetsJSON()],
     });
-    const assets = JSON.parse(
-      await readFile(resolve(outDir, 'assets.json'), 'utf-8')
-    );
+    const assets = JSON.parse(await readFile(resolve(outDir, 'assets.json'), 'utf-8'));
     for (const entry of assets.js) {
       expect(entry.value).toMatch(/^\/products-frontend-static\//);
     }
@@ -65,9 +61,7 @@ describe('vite-plugin-assets-json', () => {
       },
       plugins: [assetsJSON()],
     });
-    const assets = JSON.parse(
-      await readFile(resolve(outDir, 'assets.json'), 'utf-8')
-    );
+    const assets = JSON.parse(await readFile(resolve(outDir, 'assets.json'), 'utf-8'));
     expect(assets.css.length).toBeGreaterThan(0);
     for (const entry of assets.css) {
       expect(entry.value).toMatch(/^\/products-frontend-static\//);
@@ -88,9 +82,7 @@ describe('vite-plugin-assets-json', () => {
       plugins: [assetsJSON({ pathPrefix: '/custom/' })],
     });
 
-    const assets = JSON.parse(
-      await readFile(resolve(customOutDir, 'assets.json'), 'utf-8')
-    );
+    const assets = JSON.parse(await readFile(resolve(customOutDir, 'assets.json'), 'utf-8'));
     for (const entry of assets.js) {
       expect(entry.value).toMatch(/^\/custom\//);
     }
@@ -112,9 +104,7 @@ describe('vite-plugin-assets-json', () => {
     });
 
     // No assets.json should be generated when manifest is disabled
-    await expect(
-      readFile(resolve(emptyOutDir, 'assets.json'), 'utf-8')
-    ).rejects.toThrow();
+    await expect(readFile(resolve(emptyOutDir, 'assets.json'), 'utf-8')).rejects.toThrow();
 
     await rm(emptyOutDir, { recursive: true, force: true });
   });

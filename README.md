@@ -25,7 +25,7 @@ import { defineConfig } from 'vite';
 import { assetsJSON } from '@entur/vite-plugin-assets-json';
 
 export default {
-  plugins: [assetsJSON()]
+  plugins: [assetsJSON()],
 };
 ```
 

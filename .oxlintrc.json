@@ -1,0 +1,31 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "categories": {
+    "correctness": "error",
+    "suspicious": "warn"
+  },
+  "plugins": ["typescript", "import"],
+  "env": {
+    "node": true,
+    "es2021": true
+  },
+  "globals": {
+    "process": "readonly"
+  },
+  "ignorePatterns": ["dist/**", "dts/**", "*.js", "*.cjs"],
+  "rules": {
+    "no-console": ["warn", { "allow": ["warn", "error"] }],
+    "no-undef": "error",
+    "prefer-const": "error",
+    "no-unreachable": "warn",
+    "import/no-named-as-default": "off"
+  },
+  "overrides": [
+    {
+      "files": ["test/**"],
+      "env": {
+        "node": true
+      }
+    }
+  ]
+}
