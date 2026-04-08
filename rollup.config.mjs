@@ -12,13 +12,13 @@ export default [
       {
         format: 'es',
         sourcemap: true,
-        file: 'dist/index.mjs'
+        file: 'dist/index.mjs',
       },
       {
         format: 'cjs',
         sourcemap: true,
-        file: 'dist/index.cjs'
-      }
+        file: 'dist/index.cjs',
+      },
     ],
     plugins: [
       nodeResolve(),
@@ -26,15 +26,15 @@ export default [
       ts({
         useTsconfigDeclarationDir: true,
         sourceMap: false,
-        typescript
+        typescript,
       }),
-      terser()
-    ]
+      terser(),
+    ],
   },
   {
     input: './dts/main.d.ts',
     output: [{ file: './dist/index.d.ts', format: 'es' }],
     external: ['vite'],
-    plugins: [dts()]
-  }
+    plugins: [dts()],
+  },
 ];

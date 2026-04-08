@@ -15,7 +15,7 @@ Where should the `assets.json`-file be generated?, relative to vite `outDir`
 **`Default`**
 
 ```ts
-''
+'';
 ```
 
 #### Defined in
