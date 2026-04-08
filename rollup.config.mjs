@@ -34,6 +34,7 @@ export default [
   {
     input: './dts/main.d.ts',
     output: [{ file: './dist/index.d.ts', format: 'es' }],
+    external: ['vite'],
     plugins: [dts()]
   }
 ];

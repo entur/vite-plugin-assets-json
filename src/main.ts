@@ -1,8 +1,9 @@
 /* eslint-disable import/no-unused-modules */
-import type { Plugin, Manifest } from 'vite';
 
-import { promises as fs } from 'fs';
-import { resolve } from 'path';
+
+import { readFile, writeFile } from 'node:fs/promises';
+import { basename, dirname, resolve } from 'node:path';
+import type { Manifest, Plugin } from 'vite';
 
 /**
  * Options for the Vite plugin to generate an assets JSON file.
@@ -24,12 +25,6 @@ export interface AssetsJSONOptions {
    * @default ''
    */
   assetsDir?: string;
-}
-
-declare module 'vite' {
-  interface ManifestChunk {
-    integrity: string;
-  }
 }
 
 /**
@@ -99,8 +94,7 @@ const createAssetManifest = async (
 
   manifestPath = resolveInOutDir(manifestPath);
 
-  const manifest: Manifest | undefined = await fs
-    .readFile(manifestPath, 'utf-8')
+  const manifest: Manifest | undefined = await readFile(manifestPath, 'utf-8')
     .then(JSON.parse, () => undefined);
   const assets: Record<string, Record<string, string>[]> = {
     js: [],
@@ -117,18 +111,17 @@ const createAssetManifest = async (
           });
 
           if (chunk.css) {
-            chunk.css.forEach((file) =>
-              assets.css.push({ value: `${pathPrefix}${file}`, type: 'entry' })
-            );
+            chunk.css.forEach((file) => {
+              assets.css.push({ value: `${pathPrefix}${file}`, type: 'entry' });
+            });
           }
         }
       })
     );
 
-    const assetsPath = manifestPath
-      .replace('manifest.json', 'assets.json')
-      .replace('.vite/', assetsDir);
+    const assetsFileName = basename(manifestPath).replace('manifest', 'assets');
+    const assetsPath = resolve(dirname(manifestPath), '..', assetsDir, assetsFileName);
 
-    await fs.writeFile(assetsPath, JSON.stringify(assets, null, 2));
+    await writeFile(assetsPath, JSON.stringify(assets, null, 2));
   }
 };
