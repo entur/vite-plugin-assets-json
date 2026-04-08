@@ -8,7 +8,8 @@ on:
   push:
     branches: ['main']
     paths:
-      - 'src'
+      - 'src/**'
+      - 'test/**'
       - 'package.json'
       - 'package-lock.json'
       - 'rollup.config.mjs'
@@ -18,7 +19,8 @@ on:
     branches: ['main']
     types: [opened, synchronize] # Workflow triggering events
     paths:
-      - 'src'
+      - 'src/**'
+      - 'test/**'
       - 'package.json'
       - 'package-lock.json'
       - 'rollup.config.mjs'
@@ -51,6 +53,8 @@ jobs:
           npm i
       - name: Build # Build all packages
         run: npm run build
+      - name: Test
+        run: npm test
   notify:
     name: Notify failed check
     needs: check
