@@ -2,10 +2,9 @@
 
 ## [0.0.11](https://github.com/entur/vite-plugin-assets-json/compare/vite-plugin-assets-json-v0.0.10...vite-plugin-assets-json-v0.0.11) (2026-05-07)
 
-
 ### Bug Fixes
 
-* add support for vite 8 ([#78](https://github.com/entur/vite-plugin-assets-json/issues/78)) ([4882160](https://github.com/entur/vite-plugin-assets-json/commit/4882160445bf2c1e9f9bea7bc54938c5a750f160))
+- add support for vite 8 ([#78](https://github.com/entur/vite-plugin-assets-json/issues/78)) ([4882160](https://github.com/entur/vite-plugin-assets-json/commit/4882160445bf2c1e9f9bea7bc54938c5a750f160))
 
 ## [0.0.10](https://github.com/entur/vite-plugin-assets-json/compare/vite-plugin-assets-json-v0.0.9...vite-plugin-assets-json-v0.0.10) (2026-03-18)
 
