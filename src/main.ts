@@ -1,5 +1,5 @@
 import { readFile, writeFile } from 'node:fs/promises';
-import { basename, dirname, resolve } from 'node:path';
+import { basename, normalize, resolve } from 'node:path';
 import type { Manifest, Plugin } from 'vite';
 
 /**
@@ -62,6 +62,19 @@ const assetsJSON = (options: AssetsJSONOptions = {}): Plugin => {
 export default assetsJSON;
 
 /**
+ * Ensures that the resolved path stays within the allowed base directory to prevent path traversal.
+ * @throws {Error} if the resolved path escapes the base directory.
+ */
+const safeResolve = (baseDir: string, ...parts: string[]): string => {
+  const resolvedBase = normalize(resolve(baseDir));
+  const resolvedPath = normalize(resolve(baseDir, ...parts));
+  if (!resolvedPath.startsWith(resolvedBase + '/') && resolvedPath !== resolvedBase) {
+    throw new Error(`Path traversal detected: "${resolvedPath}" is outside "${resolvedBase}"`);
+  }
+  return resolvedPath;
+};
+
+/**
  * Create an asset manifest JSON file based on the Vite manifest.
  * @param manifestPath - Path to the Vite manifest file.
  * @param outDir - Output directory of the Vite build.
@@ -84,12 +97,12 @@ const createAssetManifest = async (
   assetsDir: string,
   pathPrefix: string,
 ) => {
-  const resolveInOutDir = (path: string) => resolve(outDir, path);
+  const resolvedOutDir = normalize(resolve(outDir));
 
-  manifestPath = resolveInOutDir(manifestPath);
+  manifestPath = safeResolve(resolvedOutDir, manifestPath);
 
   const manifest: Manifest | undefined = await readFile(manifestPath, 'utf-8').then(
-    JSON.parse,
+    (content) => JSON.parse(content) as Manifest,
     () => undefined,
   );
   const assets: Record<string, Record<string, string>[]> = {
@@ -116,7 +129,7 @@ const createAssetManifest = async (
     );
 
     const assetsFileName = basename(manifestPath).replace('manifest', 'assets');
-    const assetsPath = resolve(dirname(manifestPath), '..', assetsDir, assetsFileName);
+    const assetsPath = safeResolve(resolvedOutDir, assetsDir, assetsFileName);
 
     await writeFile(assetsPath, JSON.stringify(assets, null, 2));
   }
