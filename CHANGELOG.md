@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.0.12](https://github.com/entur/vite-plugin-assets-json/compare/vite-plugin-assets-json-v0.0.11...vite-plugin-assets-json-v0.0.12) (2026-08-12)
+
+
+### Bug Fixes
+
+* pin jayqi/failed-build-issue-action to commit hash ([#154](https://github.com/entur/vite-plugin-assets-json/issues/154)) ([e7bef20](https://github.com/entur/vite-plugin-assets-json/commit/e7bef2051d9bd4cbd071cbff9da06fe1048e9c02))
+
 ## [0.0.11](https://github.com/entur/vite-plugin-assets-json/compare/vite-plugin-assets-json-v0.0.10...vite-plugin-assets-json-v0.0.11) (2026-05-07)
 
 ### Bug Fixes
