@@ -1,0 +1,3 @@
+# Only the Node major is pinned here, so mise uses the newest 26.x.
+[tools]
+node = "26"
